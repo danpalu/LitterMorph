@@ -1,70 +1,176 @@
 ---
 import BigLogo from "../components/BigLogo.svelte";
+import Socials from "../components/Socials.svelte";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/LitterMorph/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>LitterMorph</title>
   </head>
-  <body class="bg-zinc-900 flex flex-row justify-center">
-    <main
-      class="text-white flex flex-col justify-center items-center gap-20 h-screen md:flex-row md:max-w-5xl md:w-full"
+  <body>
+    <div
+      class="bg-gradient-to-b from-tertiary-0 via-primary-0 to-secondary-0 flex flex-row justify-center"
     >
-      <div class="mx-4">
-        <h1
-          class="text-3xl my-10 border-b-2 border-indigo-400 pb-4 w-64 md:text-6xl md:w-[24rem] lg:text-8xl lg:w-[36rem] xl:text-9xl xl:w-[48rem] xl:font-light xl:pb-8"
-        >
-          LitterMorph
-        </h1>
-        <h2
-          class="text-lg -mt-4 md:text-xl lg:text-2xl xl:text-3xl xl:font-light"
-        >
-          Making the best of the rest
-        </h2>
-        <ul class="my-10 flex flex-row gap-6 fill-white">
-          <a href="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 448 512"
-              class="fill-[#4267B2] h-10 w-10 hover:drop-shadow-[0_0_10px_#4267B2] hover:fill-[#6196ff] transition-all duration-100"
-              ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-              <path
-                d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
-              ></path></svg
-            >
-          </a>
-          <a href="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 448 512"
-              class="fill-[#0077B5] h-10 w-10 hover:drop-shadow-[0_0_10px_#0077B5] hover:fill-[#00a6ff] transition-all duration-100"
-              ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-              <path
-                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-              ></path></svg
-            >
-          </a>
-          <a href="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 448 512"
-              class="fill-[#E1306C] h-10 w-10 hover:drop-shadow-[0_0_10px_#E1306C] hover:fill-[#ff4684] transition-all duration-100"
-              ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-              <path
-                d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"
-              ></path></svg
-            >
-          </a>
-        </ul>
+      <div
+        class="text-secondaryContainer-0 flex flex-col justify-center items-center gap-20 h-screen md:flex-row md:max-w-5xl md:w-full"
+      >
+        <div class="mx-4">
+          <h1
+            class="text-3xl mb-8 border-b-2 border-secondaryContainer-0 pb-2 md:pb-4 w-64 md:text-6xl md:w-[24rem] lg:text-8xl lg:w-[36rem] xl:text-9xl xl:w-[48rem] xl:pb-8"
+          >
+            LitterMorph
+          </h1>
+          <h2
+            class="text-secondaryContainer-800 text-lg -mt-4 md:text-xl lg:text-2xl xl:text-3xl xl:"
+          >
+            Making the best of the rest
+          </h2>
+          <div class="hidden md:block pt-8">
+            <Socials />
+          </div>
+        </div>
+        <BigLogo client:load />
+        <div class="md:hidden">
+          <Socials />
+        </div>
       </div>
-      <BigLogo client:load />
-    </main>
+    </div>
+    <div class="relative flex flex-row justify-center align-middle">
+      <button class="w-12 h-12 stroke-primary-0 absolute -top-20">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-12 h-12 stroke-primary-0 absolute animate-bounce"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      class="bg-secondaryContainer-0 text-tertiary-0 flex flex-col items-center"
+    >
+      <div class="">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          class="fill-secondary-0 h-8 w-screen md:h-10"
+        >
+          <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <div class="px-5 max-w-[70ch]">
+        <h2 class="text-2xl">What we do</h2>
+        <p>
+          Laver kaffebønner til det her osv osv... <br /> Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Nostrum qui, aut culpa sunt
+          voluptatibus deserunt ducimus possimus aliquam dolore? Eaque dolorem
+          sint excepturi aspernatur laboriosam, similique odio cumque magni
+          esse.
+          <br />
+           Molestias sunt temporibus vitae maxime minus dignissimos voluptas
+          rerum officiis obcaecati necessitatibus sapiente pariatur labore in
+          natus aut, deleniti unde dolorum. Ea ducimus alias aspernatur eveniet
+          vel autem odit cumque!
+          <br />
+           Nesciunt eos, similique architecto totam blanditiis iste quisquam cum
+          repudiandae, impedit cumque illum quasi corporis libero, voluptates
+          placeat soluta delectus. Eaque tempora deserunt sint temporibus
+          corrupti ex, assumenda tempore at?
+        </p>
+        <div class="flex flex-col gap-5 items-center pt-5">
+          <div class="flex flex-col items-center gap-2">
+            <p>Ting bliver smidt ud...</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-12 h-12"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              ></path>
+            </svg>
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+          </svg>
+          <div class="flex flex-col items-center gap-2">
+            <p>Vi laver nice videnskabelige ting</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-12 h-12"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+              ></path>
+            </svg>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+          </svg>
+          <div class="flex flex-col items-center gap-2">
+            <p>Nyt produkt 👌</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-12 h-12"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

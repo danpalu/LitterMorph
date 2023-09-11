@@ -18,7 +18,12 @@
   }
 </script>
 
-<button id="btn" class="relative group" bind:this={btn} on:click={play}>
+<button
+  id="btn"
+  class="relative group scale-75 md:scale-100 lg:scale-125 -mb-12"
+  bind:this={btn}
+  on:click={play}
+>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -2 100 100"
@@ -49,30 +54,34 @@
     />
   </svg>
   <div
-    class={`w-10 h-10 rounded-full border-indigo-500 border-2 bg-indigo-950 absolute -top-2 left-28 -z-10 opacity-0 ${
+    class={`w-10 h-10 rounded-full border-tertiary-0 bg-white bg-opacity-25 border-2 absolute -top-2 left-28 opacity-0 ${
       playing ? "animate-bubble" : ""
     }`}
     style="animation-duration: 1.9s; animation-delay: 0s;"
   >
-    <div class="w-2 h-2 rounded-full bg-indigo-500 absolute top-2 left-2" />
+    <div
+      class="w-2 h-2 rounded-full bg-white bg-opacity-50 border-2 absolute top-2 left-2"
+    />
   </div>
   <div
-    class={`w-8 h-8 rounded-full border-indigo-500 border-2 bg-indigo-950 absolute -top-2 left-36 -z-10 opacity-0 ${
+    class={`w-8 h-8 rounded-full border-tertiary-0 bg-white bg-opacity-25 border-2  absolute -top-2 left-36 opacity-0 ${
       playing ? "animate-bubble" : ""
     }`}
     style="animation-duration: 1.9s; animation-delay: 600ms;"
   >
     <div
-      class="w-1.5 h-1.5 rounded-full bg-indigo-500 absolute top-1.5 left-1.5"
+      class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 border-2 absolute top-1.5 left-1.5"
     />
   </div>
   <div
-    class={`w-6 h-6 rounded-full border-indigo-500 border-2 bg-indigo-950 absolute -top-2 left-32 -z-10 opacity-0 ${
+    class={`w-6 h-6 rounded-full border-tertiary-0 bg-white bg-opacity-25 border-2 absolute -top-2 left-32 opacity-0 ${
       playing ? "animate-bubble" : ""
     }`}
     on:animationend={stopPlay}
     style="animation-duration: 1.9s; animation-delay: 1000ms;"
   >
-    <div class="w-1 h-1 rounded-full bg-indigo-500 absolute top-1 left-1" />
+    <div
+      class="w-1 h-1 rounded-full bg-white bg-opacity-50 border-2 absolute top-1 left-1"
+    />
   </div>
 </button>
