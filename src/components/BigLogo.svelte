@@ -27,7 +27,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -2 100 100"
-    class="fill-white stroke-white h-64"
+    class="fill-tertiary-0 stroke-tertiary-0 h-64 drop-shadow-sm shadow-secondary-0"
   >
     <defs>
       <style>
