@@ -1,6 +1,4 @@
 ---
-import BigLogo from "../components/BigLogo.svelte";
-import Socials from "../components/Socials.astro";
 import LitFooter from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Timeline from "../components/Timeline.astro";
@@ -15,8 +13,12 @@ import Timeline from "../components/Timeline.astro";
     <title>LitterMorph</title>
   </head>
   <body>
+    <script src="../scripts/tracker.js" is:inline></script>
     <Hero />
     <Timeline />
     <LitFooter />
+    <button onclick="
+    test()
+    "> Hejsa klik mig</button>
   </body>
 </html>
