@@ -7,13 +7,20 @@ const supabase = createClient(
 );
 
 var currentUserId;
+var currentIP;
 
 async function registerUser() {
-  const { data, error } = await supabase.from("logs").insert({}).select();
+  await getIP();
+  const { data, error } = await supabase
+    .from("logs")
+    .insert({
+      ip: currentIP,
+    })
+    .select();
   if (data != null) {
     currentUserId = data[0].uid;
     console.log("Current userID: " + currentUserId);
-    console.log("User sent to db");
+    console.log("User  with ip: " + currentIP + " sent to db");
   }
 }
 
@@ -24,11 +31,20 @@ window.onload = (event) => {
 async function linkedInClicked() {
   const { error } = await supabase
     .from("logs")
-    .update({ clicked_LinkedIn: currentUserId })
+    .update({ clicked_LinkedIn: true })
     .eq("uid", currentUserId);
   console.log("User has clicked linkedIn");
 }
 
 function test() {
   console.log("clicked on jep jep");
+}
+
+async function getIP() {
+  var ip;
+  await fetch("https://api.ipify.org?format=json")
+    .then((response) => response.json())
+    .then((data) => {
+      currentIP = data.ip;
+    });
 }

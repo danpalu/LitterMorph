@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        Nunito: ["Nunito Variable"],
+        BahnSchrift: [],
+      },
       colors: {
         primary: {
           0: "#9AEBA3",

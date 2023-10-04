@@ -2,6 +2,9 @@
 import LitFooter from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Timeline from "../components/Timeline.astro";
+
+// Supports weights 200-900
+import "@fontsource-variable/nunito";
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -11,14 +14,11 @@ import Timeline from "../components/Timeline.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>LitterMorph</title>
+    <script src="../scripts/tracker.js"></script>
   </head>
   <body>
-    <script src="../scripts/tracker.js" is:inline></script>
     <Hero />
     <Timeline />
     <LitFooter />
-    <button onclick="
-    test()
-    "> Hejsa klik mig</button>
   </body>
 </html>
