@@ -23,11 +23,7 @@ async function registerUser() {
     console.log("User  with ip: " + currentIP + " sent to db");
   }
 }
-
-window.onload = (event) => {
-  registerUser();
-};
-
+await registerUser();
 async function linkedInClicked() {
   const { error } = await supabase
     .from("logs")
@@ -47,4 +43,13 @@ async function getIP() {
     .then((data) => {
       currentIP = data.ip;
     });
+}
+
+function setConsent(ja) {
+  window.localStorage.setItem("consent", "true");
+}
+
+function getConsent() {
+  alert("hej");
+  return window.localStorage.getItem("consent") == "true" ? true : false;
 }
