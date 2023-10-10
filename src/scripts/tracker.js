@@ -8,8 +8,9 @@ const supabase = createClient(
 
 var currentUserId;
 var currentIP;
+var consent = false;
 
-async function registerUser() {
+export async function registerUser() {
   await getIP();
   const { data, error } = await supabase
     .from("logs")
@@ -23,17 +24,17 @@ async function registerUser() {
     console.log("User  with ip: " + currentIP + " sent to db");
   }
 }
-await registerUser();
-async function linkedInClicked() {
+export async function linkedInClicked() {
+  if (!hasConsent()) return;
   const { error } = await supabase
     .from("logs")
     .update({ clicked_LinkedIn: true })
     .eq("uid", currentUserId);
-  console.log("User has clicked linkedIn");
+  console.log("User " + currentUserId + " has clicked linkedIn");
 }
 
-function test() {
-  console.log("clicked on jep jep");
+export function test() {
+  alert("clicked on jep jep");
 }
 
 async function getIP() {
@@ -45,11 +46,6 @@ async function getIP() {
     });
 }
 
-function setConsent(ja) {
-  window.localStorage.setItem("consent", "true");
-}
-
-function getConsent() {
-  alert("hej");
+function hasConsent() {
   return window.localStorage.getItem("consent") == "true" ? true : false;
 }

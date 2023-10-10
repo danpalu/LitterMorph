@@ -1,7 +1,7 @@
 ---
 import LitFooter from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
-import Timeline from "../components/Timeline.astro";
+import Timeline from "../components/Timeline.svelte";
 import Popup from "../components/Popup.svelte";
 // Supports weights 200-900
 import "@fontsource-variable/nunito";
@@ -13,13 +13,13 @@ import "@fontsource-variable/nunito";
     <link rel="icon" type="image/svg+xml" href="/LitterMorph/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <!-- <script src="../scripts/tracker.js"></script> -->
     <title>LitterMorph</title>
-    <script src="../scripts/tracker.js"></script>
   </head>
   <body>
+    <!-- <Popup client:only /> -->
     <Hero />
-    <Timeline />
+    <Timeline client:load />
     <LitFooter />
-    <Popup client:load />
   </body>
 </html>
